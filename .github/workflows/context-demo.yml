@@ -12,6 +12,10 @@ jobs:
           secret-message: ${{ steps.getSecretMessage.outputs.message }}
 
         steps:
+           - name: Zeige unser Geheimnis! Muahahahahaha
+             run: | 
+                echo "Geheimnis lautet: ${{ toJson(secrets.MY_SECRET) }}"
+
            - name: Zeige GitHub Kontext
              run: echo '${{ toJson(github) }}'
 
