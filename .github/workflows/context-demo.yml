@@ -13,8 +13,15 @@ jobs:
            - name: Zeige GitHub Kontext
              run: echo '${{ toJson(github) }}'
 
-           - name: Zeige Steps Kontext
-             run: echo '${{ toJson(steps) }}'
-
            - name: Zeige Runner Kontext
              run: echo '${{ toJson(runner) }}'
+             
+           - name: Zeige Steps Kontext
+             run: echo '${{ toJson(steps) }}'
+             
+           - name: Step Message schreiben
+             id: getSecretMessage
+             run: echo "message=Wuhuu!" >> "$GITHUB_OUTPUT" 
+
+           - name: Zeige Steps Kontext
+             run: echo '${{ toJson(steps) }}'
